@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8"
+    android:padding="16dp"
+    tools:context=".SolicitarCotizacionActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título de la Pantalla -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Solicitar una Cotización"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1F2937"
+            android:paddingBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Card 1: Datos del Vehículo -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_vehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Información del Vehículo"
+                    android:textStyle="bold"
+                    android:textColor="#374151"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_auto_modelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Marca y Modelo del Vehículo"
+                    android:inputType="textCapWords"
+                    android:background="@drawable/edit_text_border"
+                    android:padding="12dp"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Tipo de Servicio -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/card_vehicle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Tipo de Servicio"
+                    android:textStyle="bold"
+                    android:textColor="#374151"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_tipo_servicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="48dp"
+                    android:padding="8dp"
+                    android:background="@drawable/spinner_border" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Ubicación y Fecha -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_location_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/card_service"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Ubicación y Horario"
+                    android:textStyle="bold"
+                    android:textColor="#374151"
+                    android:textSize="16sp" />
+
+                <!-- Selección de Ubicación -->
+                <RadioGroup
+                    android:id="@+id/rg_ubicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_en_sitio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="En Centro de Servicio"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:id="@+id/rb_a_domicilio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Domicilio (GPS)"
+                        android:layout_weight="1" />
+                </RadioGroup>
+
+                <!-- Selección de Fecha y Hora -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btn_select_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Seleccionar Fecha"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="#4CAF50"
+                        android:textColor="@android:color/white"
+                        style="@style/Widget.AppCompat.Button.Colored"/>
+
+                    <Button
+                        android:id="@+id/btn_select_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Seleccionar Hora"
+                        android:backgroundTint="#2196F3"
+                        android:textColor="@android:color/white"
+                        style="@style/Widget.AppCompat.Button.Colored"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_fecha_hora_seleccionada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:text="Fecha y hora seleccionadas: N/A"
+                    android:textColor="#374151"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón de Solicitud de Cotización -->
+        <Button
+            android:id="@+id/btn_solicitar_cotizacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Solicitar Cotización"
+            android:textSize="18sp"
+            android:padding="14dp"
+            android:backgroundTint="#FF5722"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/card_location_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+    <!-- Archivo para definir un borde simple para el EditText y Spinner -->
+    <!-- Nota: Este estilo debe estar en el archivo res/drawable/edit_text_border.xml y res/drawable/spinner_border.xml -->
+    <!-- Ejemplo de res/drawable/edit_text_border.xml:
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <stroke android:width="1dp" android:color="#CCCCCC"/>
+        <corners android:radius="8dp"/>
+        <solid android:color="#FFFFFF"/>
+    </shape>
+    -->

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    android:padding="16dp"
+    tools:context=".PerfilClienteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título de la Pantalla -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mi Perfil y Vehículos"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#004D40"
+            android:gravity="center"
+            android:paddingBottom="24dp" />
+
+        <!-- Card 1: Perfil del Cliente -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Información Personal"
+                    android:textStyle="bold"
+                    android:textColor="#37474F"
+                    android:textSize="18sp"
+                    android:paddingBottom="12dp" />
+
+                <!-- Foto de Perfil (Mockup) -->
+                <ImageView
+                    android:id="@+id/iv_profile_photo"
+                    android:layout_width="108dp"
+                    android:layout_height="99dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/circle_background"
+                    android:contentDescription="Foto de Perfil"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile_placeholder"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+                <!-- Nota: Se asume que existe un drawable 'ic_profile_placeholder' y 'circle_background' para la estética -->
+
+                <EditText
+                    android:id="@+id/et_nombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_rounded"
+                    android:hint="Nombres"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/et_apellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_rounded"
+                    android:hint="Apellidos"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/et_pais"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_rounded"
+                    android:hint="País"
+                    android:inputType="textCapSentences"
+                    android:padding="12dp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/btn_guardar_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar Perfil"
+                    android:backgroundTint="#004D40"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="12dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Vehículos del Cliente -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mis Vehículos Registrados"
+                    android:textStyle="bold"
+                    android:textColor="#37474F"
+                    android:textSize="18sp"
+                    android:paddingBottom="12dp" />
+
+                <!-- Contenedor simple para mostrar la lista (en un app real, sería un RecyclerView) -->
+                <TextView
+                    android:id="@+id/tv_vehicle_list_placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="[Lista de vehículos (Marca, Modelo, Año, Tipo de aceite)]"
+                    android:padding="10dp"
+                    android:background="#EEEEEE"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btn_agregar_vehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+ Agregar/Gestionar Vehículo"
+                    android:backgroundTint="#FF9800"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Notificaciones -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Notificaciones Push (Cotizaciones de Servicio)"
+                    android:textStyle="bold"
+                    android:textColor="#37474F"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switch_notificaciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:thumbTint="#004D40"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 4: Historial de Servicios -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp"
+                    android:text="Historial de Servicios Realizados"
+                    android:textColor="#37474F"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_historial_aceite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Historial de Cambios de Aceite"
+                    android:backgroundTint="#03A9F4"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_historial_lavados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Historial de Lavados"
+                    android:backgroundTint="#03A9F4"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</ScrollView>
